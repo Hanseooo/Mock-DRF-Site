@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Coming Soon", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+body {
+    background-image: url(images/bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+body, #container1 {
+    min-height: 95svh;
+}
+
+.coming-soon-regular {
+  font-family: "Coming Soon", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+#user-list-container {
+    background-color: rgba(231, 231, 231, 0.8);
+    max-width: 50vw;
+    min-width: 300px;
+}
+#user-list-container li {
+    background-color: rgb(241, 241, 241);
+}
+
