@@ -9,9 +9,25 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
 </head>
 <body>
     <main class="">
+        <div id="overlay" class="position-fixed d-none justify-content-center align-items-center">
+            <div id="announcement-form-container" class="d-flex flex-column p-4 border border-dark rounded-3 shadow">
+                <h4 id="announcement-form-header" class="mb-3 text-center">Create Announcement</h4>
+                <form id="announcement-form" class="d-flex flex-column">
+                    <input id="announcement-header" type="text" class="form-control mb-3" placeholder="Header" required>
+                    <textarea id="announcement-message" class="form-control mb-3" rows="3" placeholder="Message" required></textarea>
+                    <div class="d-flex justify-content-end">
+                        <button id="announcement-submit-btn" class="btn btn-dark me-2">Submit</button>
+                        <button id="announcement-cancel-btn" type="button" class="btn btn-light btn-outline-dark">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
         <nav class="text-bg-dark p-2 pt-3">
             <div class="container d-flex justify-content-between align-items-center">
                 <h3>Mock up Site</h3>
@@ -24,14 +40,26 @@
         </nav>
         <div id="container1" class="container  d-flex justify-content-center align-items-center">
             <div class="d-flex flex-column mb-4 p-4 text-center justify-content-center align-items-center">
-                <h2 id="welcome-header" class="fw-bold fs-1">Welcome user</h2>
+                <h2 id="welcome-header" class="fw-bold fs-1 mt-4 mt-lg-0">Welcome user</h2>
                 <p class="mb-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil nesciunt ipsa eius iusto, suscipit quam perferendis vel minima pariatur officia.</p>
-                <div id="user-list-container" class="container p-4 mt-2 border border-dark rounded-3 shadow">
-                    <h4>Registered Accounts:</h4>
-                    <ul id="user-list" class="list-group">
+                <div class="d-flex flex-column-reverse flex-lg-row justify-content-center align-items-center">
+                    <div id="user-list-container" class="container mx-2 p-4 mt-2 border border-dark rounded-3 shadow">
+                        <h4>Registered Accounts:</h4>
+                        <ul id="user-list" class="list-group overflow-auto" style="max-height: 165px; scrollbar-width: none;",>
+                        </ul>
+                    </div>
+                    <div id="announcement-container" class="container mx-2 p-4 mt-2 border border-dark rounded-3 shadow">
+                        <h4>Announcements:</h4>
+                            <ul id="announcement-list" class="list-group overflow-auto" style="max-height: 165px; scrollbar-width: none;">
 
-                    </ul>
+                            </ul>
+                    </div>
                 </div>
+                <button id="announcement-btn" class="bg-transparent outline-0 border-0 position-fixed bottom-0 end-0 m-4 p-3">
+                    <span class="material-symbols-outlined">
+                        campaign
+                    </span>
+                </button>
             </div>
         </div>
 

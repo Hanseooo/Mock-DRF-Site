@@ -6,6 +6,8 @@ from django.contrib.auth.models import User
 from rest_framework import status
 from django.contrib.auth import authenticate
 from .serializers import UserSerializer
+from .serializers import AnnouncementSerializer
+from base.models import Announcement
 
 
 # @api_view(['GET'])
@@ -51,3 +53,39 @@ def login_user(request):
         return Response({"message": "Login successful", "username" : username}, status=status.HTTP_200_OK)
     else:
         return Response({"error": "Invalid credentials"}, status=status.HTTP_401_UNAUTHORIZED)
+    
+@api_view(["GET"])
+def get_announcements(request):
+    announcements = Announcement.objects.all()
+    serializer = AnnouncementSerializer(announcements, many=True)
+    return Response(serializer.data)
+
+@api_view(["POST"])
+def create_announcement(request):
+    serializer = AnnouncementSerializer(data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data, status=201)
+    return Response(serializer.errors, status=400)
+
+
+@api_view(['DELETE'])
+def delete_announcement(request, pk):
+    try:
+        announcement = Announcement.objects.get(pk=pk)
+    except Announcement.DoesNotExist:
+        return Response(status=404)
+    announcement.delete()
+    return Response(status=204)
+
+@api_view(['PUT'])
+def update_announcement(request, pk):
+    try:
+        announcement = Announcement.objects.get(pk=pk)
+    except Announcement.DoesNotExist:
+        return Response(status=404)
+    serializer = AnnouncementSerializer(announcement, data=request.data)
+    if serializer.is_valid():
+        serializer.save()
+        return Response(serializer.data)
+    return Response(serializer.errors, status=400)
