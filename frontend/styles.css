@@ -1,35 +1,178 @@
+/* General Styles */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: "Coming Soon", cursive;
-    font-weight: 400;
-    font-style: normal;
+    font-family: 'Fredoka One', sans-serif;
 }
 
 body {
-    background-image: url(images/bg.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-
+    background: #f9f8fb;
+    font-family: 'Arial', sans-serif;
+    color: #333;
 }
 
-body, #container1 {
-    min-height: 95svh;
-}
-
-.coming-soon-regular {
-  font-family: "Coming Soon", cursive;
+.story-script-regular {
+  font-family: "Story Script", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-#user-list-container {
-    background-color: rgba(231, 231, 231, 0.8);
-    max-width: 50vw;
-    min-width: 300px;
+
+/* Cat-themed Navbar */
+.navbar {
+    background-color: #f1c6c6; /* Light Pink background */
 }
-#user-list-container li {
-    background-color: rgb(241, 241, 241);
+
+.navbar a {
+    color: #fff !important;
+}
+
+.navbar-toggler {
+    border-color: #fff !important;
+}
+
+/* Button Hover Effects */
+.btn:hover {
+    background-color: #f1c6c6;
+    color: #fff;
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.paw-icon {
+    font-size: 1.5rem;
+    margin-left: 5px;
+}
+
+/* Form Containers (Sign In and Register) */
+.card {
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 1rem 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #f1c6c6;
+    margin-bottom: 1rem;
+}
+
+/* Text Field Styling */
+input.form-control {
+    border-radius: 10px;
+    border: 1px solid #f1c6c6;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    background-color: #f9f8fb;
+}
+
+input.form-control:focus {
+    border-color: #f1c6c6;
+    box-shadow: 0 0 5px rgba(241, 198, 198, 0.8);
+}
+
+/* Button Styling */
+.btn-pink {
+    background-color: #f1c6c6;
+    color: white;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    padding: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.btn-pink:hover {
+    background-color: #f1a8a8;
+    color: white;
+}
+
+/* Welcome Section */
+#welcome-header {
+    font-size: 2.5rem;
+    color: #f1a8a8;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+}
+
+#container1 .text-center {
+    padding: 3rem;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+#container1 .text-center h2 {
+    font-size: 2rem;
+    color: #f1c6c6;
+    margin-bottom: 1rem;
+}
+
+/* List Group for Users */
+#user-list-container {
+    padding: 1.5rem;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 1.5rem;
+}
+
+#user-list {
+    background-color: #f9f8fb;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+#user-list li {
+    background-color: #f1e0e0;
+    margin-bottom: 0.5rem;
+    padding: 0.8rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+#user-list li:hover {
+    background-color: #f1c6c6;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+#user-list li a {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Footer */
+footer {
+    background-color: #f1c6c6;
+    color: white;
+    padding: 1.5rem;
+    font-size: 1rem;
+    text-align: center;
+}
+
+/* Custom Media Queries */
+@media (max-width: 768px) {
+    #container1 .text-center {
+        padding: 2rem;
+    }
+
+    #welcome-header {
+        font-size: 2rem;
+    }
+
+    .card {
+        padding: 1.5rem;
+    }
 }
 

@@ -10,7 +10,7 @@ from .serializers import UserSerializer
 
 # @api_view(['GET'])
 # def getData(request):
-#     #person = {'name': 'Hans', 'age': 21}
+#     #person = {'name': 'Gela', 'age': 20}
 #     items = Item.objects.all()
 #     serializer = ItemSerializer(items, many = True)
 #     return Response(serializer.data)
